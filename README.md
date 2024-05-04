@@ -1,4 +1,4 @@
-Mahasiswa Ilmu Komputer berusia 19 tahun yang bersemangat dari Universitas Riau dengan minat besar di bidang software engineering.
+currently pursuing a bachelor degree at Computer Science, Riau University
 
 <!---
 ryandaaa/ryandaaa is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
