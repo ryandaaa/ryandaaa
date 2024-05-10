@@ -1,4 +1,4 @@
-currently pursuing a bachelor degree at Computer Science, Riau University
+personal archive
 
 <!---
 ryandaaa/ryandaaa is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
