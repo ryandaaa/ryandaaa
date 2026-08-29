@@ -1,0 +1,39 @@
+name: Daily Profile Update
+
+on:
+  schedule:
+    - cron: "5 17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update README date
+        shell: bash
+        run: |
+          TODAY="$(TZ=Asia/Jakarta date '+%Y-%m-%d')"
+          if grep -q '^Last updated:' README.md; then
+            sed -i "s/^Last updated:.*/Last updated: ${TODAY}/" README.md
+          else
+            printf '\nLast updated: %s\n' "${TODAY}" >> README.md
+          fi
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name "ryandaaa"
+          git config user.email "143876980+ryandaaa@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "README already has today's date."
+            exit 0
+          fi
+          git commit -m "chore: update profile date"
+          git push
